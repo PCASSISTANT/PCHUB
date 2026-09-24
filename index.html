@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: blob: 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * data: blob: 'unsafe-inline'; font-src * data: blob: 'unsafe-inline';">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KTMEX PC HUB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="importmap-type" content="systemjs-importmap">
+
+    <script src="./src/importmap.json" type="systemjs-importmap"></script>
+    <link rel="preload" href="./src/assets/deps/single-spa.min.js" as="script" crossorigin="anonymous" />
+    <script src='./src/assets/deps/minified.js'></script>
+    <script src="./src/assets/deps/zone.js"></script>
+    <script src="./src/assets/deps/import-map-overrides.js"></script>
+    <script src="./src/assets/deps/system.min.js"></script>
+    <script src="./src/assets/deps/amd.min.js"></script>
+    <script src="./src/assets/deps/named-exports.js"></script>
+    <script src="./src/assets/deps/named-register.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        background-color: #e5e5e5;
+        font-family: Arial, sans-serif;
+      }
+
+      .header-bar {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 25px;
+        border-bottom: 1px solid #dcdcdc;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+
+      .logo-ktmex {
+        height: 38px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .header-title {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+        font-weight: bold;
+        color: #000000;
+      }
+
+      .menu-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 60px 20px;
+      }
+
+      .card {
+        background-color: #ffffff;
+        width: 180px;
+        height: 150px;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        border-top: 4px solid #0056b3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .card-icon {
+        width: 50px;
+        height: 50px;
+        fill: #333333;
+        margin-bottom: 14px;
+      }
+
+      .card-title {
+        font-size: 15px;
+        font-weight: bold;
+        color: #333333;
+        line-height: 1.25;
+      }
+    </style>
+
+    <template id="single-spa-layout">
+      <single-spa-router mode="hash">
+        <nav class="tscs-navbar">
+          <application name="KTMEXPCS"></application>
+        </nav>
+                
+        <div class="main-content">
+          <route path="sp">
+            <application name="sp"></application>
+          </route>
+        </div>
+        <div class="main-content">
+          <route path="pp">
+            <application name="pp"></application>
+          </route>
+        </div>
+      </single-spa-router>
+    </template>
+  </head>
+  <body>
+
+    <header class="header-bar">
+      <img class="logo-ktmex" src="https://lh3.googleusercontent.com/d/1VZDqp2rlBQbTyylvG5eMWt5q9fqe7S2f" alt="Logo KTMEX">
+      <div class="header-title">
+        Kyoho Toyotsu México Production Control HUB (PC HUB)
+      </div>
+    </header>
+
+    <div class="menu-container">
+      <a href="https://pcassistant.github.io/Crear-Kanban/" target="_blank" class="card">
+        <svg class="card-icon" viewBox="0 0 24 24">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-4h5v4zm0-6H7V7h5v4zm5 6h-4V7h4v10z"/>
+        </svg>
+        <span class="card-title">Generador de Kanban</span>
+      </a>
+
+      <a href="https://pcassistant.github.io/KANBANTEMP/" target="_blank" class="card">
+        <svg class="card-icon" viewBox="0 0 24 24">
+          <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+        </svg>
+        <span class="card-title">Generador de Kanban temporal</span>
+      </a>
+
+      <a href="https://pcassistant.github.io/JAMAITASKTMEX/" target="_blank" class="card">
+        <svg class="card-icon" viewBox="0 0 24 24">
+          <path d="M4 6h16v2H4zm2 4h12v2H6zm3 4h6v2H9z"/>
+        </svg>
+        <span class="card-title">Generador de Jamaitas</span>
+      </a>
+
+      <a href="https://pcassistant.github.io/POKAYOKE3STEPS/" target="_blank" class="card">
+        <svg class="card-icon" viewBox="0 0 24 24">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+        </svg>
+        <span class="card-title">Poka Yoke 3 Puntos</span>
+      </a>
+    </div>
+
+    <script>
+      Promise.all([System.import('single-spa'), System.import('single-spa-layout')]).then(([singleSpa, singleSpaLayout]) => {
+        const { constructApplications, constructLayoutEngine, constructRoutes } = singleSpaLayout;
+        const { registerApplication, start } = singleSpa;
+
+        const routes = constructRoutes(document.querySelector('#single-spa-layout'));
+        const applications = constructApplications({
+          routes,
+          loadApp({ name }) {
+            return System.import(name);
+          },
+        });
+        const layoutEngine = constructLayoutEngine({ routes, applications });
+        applications.forEach(registerApplication);
+
+        start();
+      });
+    </script>
+  </body>
+</html>
